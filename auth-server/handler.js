@@ -17,7 +17,7 @@ const credentials = {
   ],
 };
 
-const { client_id, client_secret, redirect_uris, calendar_id } = credentials;
+const { client_id, client_secret, redirect_uris } = credentials;
 
 /**
  * @function getAuthURL
@@ -30,19 +30,66 @@ module.exports.getAuthURL = async () => {
     client_secret,
     redirect_uris[0]
   );
-
   const authUrl = oAuth2Client.generateAuthUrl({
     access_type: 'offline',
     scope: SCOPES,
   });
-
   return {
     statusCode: 200,
     headers: {
-      'Access-Control-Allow-Origins': '*',
+      'Access-Control-Allow-Origin': '*',
     },
     body: JSON.stringify({
       authUrl,
     }),
   };
+};
+
+/**
+ * @function getAccessToken
+ * @description get url code after successful redirect
+ * @param {*} event
+ * @returns
+ */
+module.exports.getAccessToken = async (event) => {
+  // The values used to instantiate the OAuthClient are at the top of the file
+  const oAuth2Client = new google.auth.OAuth2(
+    client_id,
+    client_secret,
+    redirect_uris[0]
+  );
+  // Decode authorization code extracted from the URL query
+  const code = decodeURIComponent(`${event.pathParameters.code}`);
+
+  return new Promise((resolve, reject) => {
+    /**
+     *  Exchange authorization code for access token with a “callback” after the exchange,
+     *  The callback in this case is an arrow function with the results as parameters: “err” and “token.”
+     */
+
+    oAuth2Client.getToken(code, (err, token) => {
+      if (err) {
+        return reject(err);
+      }
+      return resolve(token);
+    });
+  })
+    .then((token) => {
+      // Respond with OAuth token
+      return {
+        statusCode: 200,
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+        },
+        body: JSON.stringify(token),
+      };
+    })
+    .catch((err) => {
+      // Handle error
+      console.error(err);
+      return {
+        statusCode: 500,
+        body: JSON.stringify(err),
+      };
+    });
 };
