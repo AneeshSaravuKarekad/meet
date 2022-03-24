@@ -5,13 +5,29 @@ import CitySearch from './CitySearch';
 
 import './App.css';
 import NumberOfEvents from './NumberOfEvents';
+import { mockData } from './mock-data';
+import { extractLocations } from './api';
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      locations: [],
+    };
+  }
+
+  componentDidMount() {
+    this.setState({
+      location: extractLocations(mockData),
+    });
+  }
+
   render() {
+    const { locations } = this.state;
     return (
       <div className="App">
-        <CitySearch />
+        <CitySearch locations={locations} />
         <NumberOfEvents />
-        <EventList />
+        <EventList events={mockData} />
       </div>
     );
   }

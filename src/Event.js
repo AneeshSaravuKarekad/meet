@@ -34,7 +34,9 @@ export default class Event extends Component {
         <button
           className="btn btn-show-hide"
           onClick={() => this.handleButtonClicked()}
-        ></button>
+        >
+          {showDetails ? 'Hide Details' : 'Show Details'}
+        </button>
       </div>
     );
   }
