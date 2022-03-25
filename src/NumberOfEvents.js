@@ -17,12 +17,15 @@ export default class NumberOfEvents extends Component {
   render() {
     const { num } = this.state;
     return (
-      <input
-        className="numberOfEvents"
-        type="number"
-        value={num}
-        onChange={this.handleInputChanged}
-      />
+      <>
+        <label>Number of Events</label>
+        <input
+          className="numberOfEvents"
+          type="number"
+          value={num}
+          onChange={this.handleInputChanged}
+        />
+      </>
     );
   }
 }
