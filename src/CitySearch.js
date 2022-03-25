@@ -47,8 +47,11 @@ export default class CitySearch extends Component {
           className="suggestions"
           style={this.state.showSuggestions ? {} : { display: 'none' }}
         >
-          {suggestions.map((suggestion, idx) => (
-            <li key={idx} onClick={() => this.handleItemClicked(suggestion)}>
+          {suggestions.map((suggestion) => (
+            <li
+              key={suggestion}
+              onClick={() => this.handleItemClicked(suggestion)}
+            >
               {suggestion}
             </li>
           ))}

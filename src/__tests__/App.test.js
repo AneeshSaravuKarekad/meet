@@ -5,7 +5,6 @@ import EventList from '../EventList';
 import CitySearch from '../CitySearch';
 import App from '../App';
 import NumberOfEvents from '../NumberOfEvents';
-
 import { mockData } from '../mock-data';
 import { extractLocations, getEvents } from '../api';
 
@@ -16,7 +15,6 @@ describe('<App /> component', () => {
   beforeAll(() => {
     AppWrapper = shallow(<App />);
   });
-
   test('render list of events', () => {
     expect(AppWrapper.find(EventList)).toHaveLength(1);
   });
@@ -30,9 +28,9 @@ describe('<App /> component', () => {
   });
 });
 
-// -- Integration Tests -- //
+//  -- Integration Testing -- //
 
-describe('<App /> Integration', () => {
+describe('<App /> integration', () => {
   test('App passes "events" state as a prop to EventList', () => {
     const AppWrapper = mount(<App />);
     const AppEventsState = AppWrapper.state('events');
@@ -47,6 +45,15 @@ describe('<App /> Integration', () => {
     expect(AppLocationsState).not.toEqual(undefined);
     expect(AppWrapper.find(CitySearch).props().locations).toEqual(
       AppLocationsState
+    );
+    AppWrapper.unmount();
+  });
+  test('App passes "numberOfEvents" state as a prop to NumberOfEvents', () => {
+    const AppWrapper = mount(<App />);
+    const AppNumberOfEventsState = AppWrapper.state('numberOfEvents');
+    expect(AppNumberOfEventsState).not.toEqual(undefined);
+    expect(AppWrapper.find(NumberOfEvents).props().numberOfEvents).toEqual(
+      AppNumberOfEventsState
     );
     AppWrapper.unmount();
   });
@@ -65,6 +72,20 @@ describe('<App /> Integration', () => {
       (event) => event.location === selectedCity
     );
     expect(AppWrapper.state('events')).toEqual(eventsToShow);
+    AppWrapper.unmount();
+  });
+
+  test('update List of events after user changes number of events', () => {
+    const AppWrapper = mount(<App />);
+    const NumberOfEventsWrapper = AppWrapper.find(NumberOfEvents);
+
+    AppWrapper.instance().updateEvents = jest.fn();
+    AppWrapper.instance().forceUpdate();
+    NumberOfEventsWrapper.instance().handleInputChanged({
+      target: { value: 1 },
+    });
+    expect(AppWrapper.instance().updateEvents).toHaveBeenCalledTimes(1);
+    expect(AppWrapper.instance().updateEvents).toHaveBeenCalledWith(null, 1);
     AppWrapper.unmount();
   });
 

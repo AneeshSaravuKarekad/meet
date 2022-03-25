@@ -8,26 +8,30 @@ import NumberOfEvents from '../NumberOfEvents';
 describe('<NumberOfEvents /> components', () => {
   let NumberOfEventsWrapper;
   beforeAll(() => {
-    NumberOfEventsWrapper = shallow(<NumberOfEvents />);
+    NumberOfEventsWrapper = shallow(<NumberOfEvents updateEvents={() => {}} />);
   });
-  test('render number of events input', () => {
+
+  test('render textbox element', () => {
     expect(NumberOfEventsWrapper.find('.numberOfEvents')).toHaveLength(1);
   });
 
   test('render text input correctly', () => {
-    const numberOfEvents = NumberOfEventsWrapper.state('num');
-    expect(NumberOfEventsWrapper.find('.numberOfEvents').prop('value')).toBe(
-      numberOfEvents
-    );
+    const numberOfEvents = NumberOfEventsWrapper.state('numberOfEvents');
+    expect(
+      NumberOfEventsWrapper.find('#numberOfEvents__input').prop('value')
+    ).toBe(numberOfEvents);
   });
 
-  test('change the number of events when changing', () => {
-    const numObject = { target: { value: 10 } };
-    NumberOfEventsWrapper.find('.numberOfEvents').simulate('change', numObject);
-    expect(NumberOfEventsWrapper.state('num')).toBe(10);
+  test('change state when input changes', () => {
+    const eventObject = { target: { value: 10 } };
+    NumberOfEventsWrapper.find('#numberOfEvents__input').simulate(
+      'change',
+      eventObject
+    );
+    expect(NumberOfEventsWrapper.state('numberOfEvents')).toBe(10);
   });
 
   test('show number of events input label', () => {
-    expect(NumberOfEventsWrapper.find('label')).toHaveLength(1);
+    expect(NumberOfEventsWrapper.find('.numberOfEvents label')).toHaveLength(1);
   });
 });
