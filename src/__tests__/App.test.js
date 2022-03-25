@@ -48,6 +48,15 @@ describe('<App /> integration', () => {
     );
     AppWrapper.unmount();
   });
+  test('App passes "numberOfEvents" state as a prop to NumberOfEvents', () => {
+    const AppWrapper = mount(<App />);
+    const AppNumberOfEventsState = AppWrapper.state('numberOfEvents');
+    expect(AppNumberOfEventsState).not.toEqual(undefined);
+    expect(AppWrapper.find(NumberOfEvents).props().numberOfEvents).toEqual(
+      AppNumberOfEventsState
+    );
+    AppWrapper.unmount();
+  });
 
   test('get list of events matching the city selected by the user', async () => {
     const AppWrapper = mount(<App />);
@@ -63,6 +72,20 @@ describe('<App /> integration', () => {
       (event) => event.location === selectedCity
     );
     expect(AppWrapper.state('events')).toEqual(eventsToShow);
+    AppWrapper.unmount();
+  });
+
+  test('update List of events after user changes number of events', () => {
+    const AppWrapper = mount(<App />);
+    const NumberOfEventsWrapper = AppWrapper.find(NumberOfEvents);
+
+    AppWrapper.instance().updateEvents = jest.fn();
+    AppWrapper.instance().forceUpdate();
+    NumberOfEventsWrapper.instance().handleInputChanged({
+      target: { value: 1 },
+    });
+    expect(AppWrapper.instance().updateEvents).toHaveBeenCalledTimes(1);
+    expect(AppWrapper.instance().updateEvents).toHaveBeenCalledWith(null, 1);
     AppWrapper.unmount();
   });
 
