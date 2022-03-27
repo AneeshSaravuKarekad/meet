@@ -25,11 +25,11 @@ export default class Event extends Component {
         </p>
         <p className="location">{event.location}</p>
         {showDetails && (
-          <>
+          <div className="event__Details">
             <h3>About event: </h3>
             <a href={event.htmlLink}>See details on Google Calendar</a>
             <p>{event.description}</p>
-          </>
+          </div>
         )}
         <button
           className="btn btn-show-hide"
