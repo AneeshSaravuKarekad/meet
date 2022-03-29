@@ -1,17 +1,20 @@
 import React, { Component } from 'react';
 
 export default class CitySearch extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       query: '',
       suggestions: [],
-      showSuggestions: undefined,
+      showSuggestions: false,
+      locations: this.props.locations,
     };
   }
 
   handleInputChanged = (event) => {
-    const { value } = event.target;
+    // console.log(this.props);
+    const value = event.target.value;
+    this.setState({ showSuggestions: true });
     const suggestions = this.props.locations.filter((location) => {
       return location.toUpperCase().indexOf(value.toUpperCase()) > -1;
     });

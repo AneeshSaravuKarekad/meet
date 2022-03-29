@@ -11,7 +11,7 @@ export default class NumberOfEvents extends Component {
 
   handleInputChanged = (event) => {
     const { value } = event.target;
-    this.props.updateEvents(null, value);
+    this.props.updateEvents(value);
     this.setState({ numberOfEvents: value });
     if (value < 1 || value > 32) {
       this.setState({
