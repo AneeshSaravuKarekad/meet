@@ -12,7 +12,6 @@ export default class CitySearch extends Component {
   }
 
   handleInputChanged = (event) => {
-    // console.log(this.props);
     const value = event.target.value;
     this.setState({ showSuggestions: true });
     const suggestions = this.props.locations.filter((location) => {
