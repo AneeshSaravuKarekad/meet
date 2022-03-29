@@ -85,7 +85,7 @@ describe('<App /> integration', () => {
       target: { value: 1 },
     });
     expect(AppWrapper.instance().updateEvents).toHaveBeenCalledTimes(1);
-    expect(AppWrapper.instance().updateEvents).toHaveBeenCalledWith(null, 1);
+    expect(AppWrapper.instance().updateEvents).toHaveBeenCalledWith('all', 1);
     AppWrapper.unmount();
   });
 
