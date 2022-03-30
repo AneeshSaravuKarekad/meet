@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
-import { getEvents, extractLocations } from './api';
+import { getEvents, extractLocations, checkToken, getAccessToken } from './api';
+import WelcomeScreen from './WelcomeScreen';
 
 import './App.css';
 class App extends Component {
@@ -14,21 +15,32 @@ class App extends Component {
       locations: [],
       numberOfEvents: 32,
       location: 'all',
+      showWelcomeScreen: undefined,
     };
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     const { numberOfEvents } = this.state;
     this.mounted = true;
+    const accessToken = localStorage.getItem('access_token');
+    const isTokenValid = (await checkToken(accessToken)).error ? false : true;
 
-    getEvents().then((events) => {
-      if (this.mounted) {
-        this.setState({
-          events: events.slice(0, numberOfEvents),
-          locations: extractLocations(events),
-        });
-      }
+    const searchParams = new URLSearchParams(window.location.search);
+
+    const code = searchParams.get('code');
+    this.setState({
+      showWelcomeScreen: !(code || isTokenValid),
     });
+    if ((code || isTokenValid) && this.mounted) {
+      getEvents().then((events) => {
+        if (this.mounted) {
+          this.setState({
+            events: events.slice(0, numberOfEvents),
+            locations: extractLocations(events),
+          });
+        }
+      });
+    }
   }
 
   componentWillUnmount() {
@@ -61,7 +73,9 @@ class App extends Component {
   };
 
   render() {
-    const { events, locations, numberOfEvents } = this.state;
+    const { events, locations, numberOfEvents, showWelcomeScreen } = this.state;
+
+    if (showWelcomeScreen === undefined) return <div className="App" />;
     return (
       <div className="App">
         <CitySearch locations={locations} updateEvents={this.updateEvents} />
@@ -70,6 +84,12 @@ class App extends Component {
           numberOfEvents={numberOfEvents}
         />
         <EventList events={events} />
+        <WelcomeScreen
+          showWelcomeScreen={showWelcomeScreen}
+          getAccessToken={() => {
+            getAccessToken();
+          }}
+        />
       </div>
     );
   }
