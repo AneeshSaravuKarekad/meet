@@ -106,7 +106,11 @@ class App extends Component {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                   <Nav
-                    style={{ width: '100%', justifyContent: 'space-around' }}
+                    style={{
+                      width: '100%',
+                      justifyContent: 'space-around',
+                      alignItems: 'center',
+                    }}
                   >
                     <Nav.Link>
                       <NumberOfEvents

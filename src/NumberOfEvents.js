@@ -31,7 +31,7 @@ export default class NumberOfEvents extends Component {
     return (
       <>
         <div className="numberOfEvents" style={{ display: 'flex' }}>
-          <label style={{ marginLeft: '1rem' }}>Number of Events: </label>
+          <label style={{ marginRight: '1rem' }}>Number of Events: </label>
           <input
             id="numberOfEvents__input"
             type="number"

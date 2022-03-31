@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Col } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 import Event from './Event';
 
 export default class EventList extends Component {
@@ -7,13 +7,15 @@ export default class EventList extends Component {
     const { events } = this.props;
     return (
       <ul className="EventList">
-        {events.map((event) => (
-          <Col>
-            <li key={event.id}>
-              <Event event={event} />
-            </li>
-          </Col>
-        ))}
+        <Row className="justify-content-center">
+          {events.map((event) => (
+            <Col>
+              <li key={event.id}>
+                <Event event={event} />
+              </li>
+            </Col>
+          ))}
+        </Row>
       </ul>
     );
   }
