@@ -98,43 +98,48 @@ class App extends Component {
     }
     return (
       <div className="App">
-        <Row className="justify-content-md-center">
-          <Navbar bg="light" expand="lg">
-            <Container fluid>
-              <Navbar.Brand style={{ fontSize: '2.5rem' }}>Meet</Navbar.Brand>
-              <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-              <Navbar.Collapse id="responsive-navbar-nav" style={{ flex: '1' }}>
-                <Nav justify className="justify-content-center">
-                  <Nav.Link>
-                    <NumberOfEvents
-                      updateEvents={this.updateNumberOfEvents}
-                      numberOfEvents={numberOfEvents}
-                    />
-                  </Nav.Link>
-                  <Nav.Link>
-                    <CitySearch
-                      locations={locations}
-                      updateEvents={this.updateEvents}
-                    />
-                  </Nav.Link>
-                </Nav>
-              </Navbar.Collapse>
-            </Container>
-          </Navbar>
-        </Row>
-
-        {!navigator.onLine && (
-          <Row className="justify-content-md-center">
-            <OfflineAlert
-              text={
-                'You are offline. New events can not be loaded until you have an internet connection'
-              }
-            />
+        <Container fluid>
+          <Row className="justify-content-center">
+            <Navbar bg="light" expand="lg">
+              <Container fluid>
+                <Navbar.Brand style={{ fontSize: '2.5rem' }}>Meet</Navbar.Brand>
+                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                <Navbar.Collapse
+                  id="responsive-navbar-nav"
+                  style={{ flex: '1' }}
+                >
+                  <Nav justify className="justify-content-center">
+                    <Nav.Link>
+                      <NumberOfEvents
+                        updateEvents={this.updateNumberOfEvents}
+                        numberOfEvents={numberOfEvents}
+                      />
+                    </Nav.Link>
+                    <Nav.Link>
+                      <CitySearch
+                        locations={locations}
+                        updateEvents={this.updateEvents}
+                      />
+                    </Nav.Link>
+                  </Nav>
+                </Navbar.Collapse>
+              </Container>
+            </Navbar>
           </Row>
-        )}
-        <Row className="justify-content-md-center">
-          <EventList events={events} />
-        </Row>
+
+          {!navigator.onLine && (
+            <Row className="justify-content-center">
+              <OfflineAlert
+                text={
+                  'You are offline. New events can not be loaded until you have an internet connection'
+                }
+              />
+            </Row>
+          )}
+          <Row className="justify-content-center">
+            <EventList events={events} />
+          </Row>
+        </Container>
       </div>
     );
   }
