@@ -29,16 +29,18 @@ export default class NumberOfEvents extends Component {
   render() {
     const { numberOfEvents, infoText } = this.state;
     return (
-      <div className="numberOfEvents" style={{ display: 'flex' }}>
-        <label>Number of Events: </label>
-        <input
-          id="numberOfEvents__input"
-          type="number"
-          value={numberOfEvents}
-          onChange={this.handleInputChanged}
-        />
+      <>
+        <div className="numberOfEvents" style={{ display: 'flex' }}>
+          <label style={{ marginLeft: '1rem' }}>Number of Events: </label>
+          <input
+            id="numberOfEvents__input"
+            type="number"
+            value={numberOfEvents}
+            onChange={this.handleInputChanged}
+          />
+        </div>
         <ErrorAlert text={infoText} />
-      </div>
+      </>
     );
   }
 }

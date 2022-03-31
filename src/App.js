@@ -105,7 +105,9 @@ class App extends Component {
                 <Navbar.Brand style={{ fontSize: '2.5rem' }}>Meet</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
-                  <Nav className="justify-content-end">
+                  <Nav
+                    style={{ width: '100%', justifyContent: 'space-around' }}
+                  >
                     <Nav.Link>
                       <NumberOfEvents
                         updateEvents={this.updateNumberOfEvents}
