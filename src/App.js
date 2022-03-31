@@ -5,7 +5,7 @@ import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import { getEvents, extractLocations, checkToken, getAccessToken } from './api';
 import WelcomeScreen from './WelcomeScreen';
-
+import { WarningAlert } from './Alert';
 import './App.css';
 class App extends Component {
   constructor(props) {
@@ -16,6 +16,7 @@ class App extends Component {
       numberOfEvents: 32,
       location: 'all',
       showWelcomeScreen: undefined,
+      offlineAlertText: '',
     };
   }
 
@@ -39,6 +40,16 @@ class App extends Component {
             locations: extractLocations(events),
           });
         }
+      });
+    }
+
+    if (!navigator.onLine) {
+      this.setState({
+        offlineAlertText: 'You are not connected to the internet',
+      });
+    } else {
+      this.setState({
+        offlineAlertText: '',
       });
     }
   }
@@ -73,11 +84,18 @@ class App extends Component {
   };
 
   render() {
-    const { events, locations, numberOfEvents, showWelcomeScreen } = this.state;
+    const {
+      events,
+      locations,
+      numberOfEvents,
+      showWelcomeScreen,
+      offlineAlertText,
+    } = this.state;
 
     if (showWelcomeScreen === undefined) return <div className="App" />;
     return (
       <div className="App">
+        <WarningAlert text={offlineAlertText} />
         <CitySearch locations={locations} updateEvents={this.updateEvents} />
         <NumberOfEvents
           updateEvents={this.updateNumberOfEvents}
