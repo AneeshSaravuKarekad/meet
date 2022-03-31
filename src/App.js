@@ -99,7 +99,7 @@ class App extends Component {
     return (
       <div className="App">
         <Container fluid>
-          <Row className="justify-content-center">
+          <Row>
             <Navbar bg="light" expand="lg">
               <Container fluid>
                 <Navbar.Brand style={{ fontSize: '2.5rem' }}>Meet</Navbar.Brand>
@@ -108,7 +108,7 @@ class App extends Component {
                   id="responsive-navbar-nav"
                   style={{ flex: '1' }}
                 >
-                  <Nav justify className="justify-content-center">
+                  <Nav justify className="justify-content-end flex-grow-1 pe-3">
                     <Nav.Link>
                       <NumberOfEvents
                         updateEvents={this.updateNumberOfEvents}
