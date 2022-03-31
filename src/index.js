@@ -6,6 +6,10 @@ import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 import * as atatus from 'atatus-spa';
 
+if (navigator.onLine) {
+  atatus.config('8fff3e8232e546eca23d12e9452635d4').install();
+}
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
@@ -21,11 +25,11 @@ ReactDOM.render(
 //   serviceWorkerRegistration.register();
 // }
 
-serviceWorkerRegistration.register();
+if (navigator.onLine) {
+  serviceWorkerRegistration.register();
+}
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
-if (navigator.onLine)
-  atatus.config('8fff3e8232e546eca23d12e9452635d4').install();
