@@ -7,6 +7,7 @@ import { getEvents, extractLocations, checkToken, getAccessToken } from './api';
 import WelcomeScreen from './WelcomeScreen';
 import './App.css';
 import { OfflineAlert } from './Alert';
+import { Container, Nav, Navbar } from 'react-bootstrap';
 class App extends Component {
   constructor(props) {
     super(props);
@@ -97,11 +98,29 @@ class App extends Component {
     }
     return (
       <div className="App">
-        <CitySearch locations={locations} updateEvents={this.updateEvents} />
-        <NumberOfEvents
-          updateEvents={this.updateNumberOfEvents}
-          numberOfEvents={numberOfEvents}
-        />
+        <Container fluid>
+          <Navbar bg="light" expand="lg">
+            <Navbar.Brand>Meet</Navbar.Brand>
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+            <Navbar.Collapse id="responsive-navbar-nav">
+              <Nav className="nav">
+                <Nav.Link>
+                  <NumberOfEvents
+                    updateEvents={this.updateNumberOfEvents}
+                    numberOfEvents={numberOfEvents}
+                  />
+                </Nav.Link>
+                <Nav.Link>
+                  <CitySearch
+                    locations={locations}
+                    updateEvents={this.updateEvents}
+                  />
+                </Nav.Link>
+              </Nav>
+            </Navbar.Collapse>
+          </Navbar>
+        </Container>
+
         {!navigator.onLine && (
           <OfflineAlert
             text={
