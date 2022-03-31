@@ -100,7 +100,7 @@ class App extends Component {
       <div className="App">
         <Container fluid>
           <Navbar bg="light" expand="lg">
-            <Navbar.Brand>Meet</Navbar.Brand>
+            <Navbar.Brand style={{ fontSize: '2.5rem' }}>Meet</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="nav">
