@@ -4,11 +4,11 @@ import './index.css';
 import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
-import * as atatus from 'atatus-spa';
+// import * as atatus from 'atatus-spa';
 
-if (navigator.onLine) {
-  atatus.config('8fff3e8232e546eca23d12e9452635d4').install();
-}
+// if (navigator.onLine) {
+//   atatus.config('8fff3e8232e546eca23d12e9452635d4').install();
+// }
 
 ReactDOM.render(
   <React.StrictMode>
