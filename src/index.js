@@ -19,10 +19,12 @@ ReactDOM.render(
 
 // if (navigator.onLine) {
 //   serviceWorkerRegistration.register();
-//   atatus.config('8fff3e8232e546eca23d12e9452635d4').install();
 // }
+
+serviceWorkerRegistration.unregister();
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+atatus.config('8fff3e8232e546eca23d12e9452635d4').install();
