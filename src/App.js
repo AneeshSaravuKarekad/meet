@@ -7,7 +7,7 @@ import { getEvents, extractLocations, checkToken, getAccessToken } from './api';
 import WelcomeScreen from './WelcomeScreen';
 import './App.css';
 import { OfflineAlert } from './Alert';
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Container, Nav, Navbar, Row } from 'react-bootstrap';
 class App extends Component {
   constructor(props) {
     super(props);
@@ -98,40 +98,43 @@ class App extends Component {
     }
     return (
       <div className="App">
-        <Container fluid>
+        <Row>
           <Navbar bg="light" expand="lg">
-            <Navbar.Brand style={{ fontSize: '2.5rem' }}>Meet</Navbar.Brand>
-            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-            <Navbar.Collapse
-              id="responsive-navbar-nav"
-              className="justify-content-end"
-            >
-              <Nav justify className="justify-content-center">
-                <Nav.Link>
-                  <NumberOfEvents
-                    updateEvents={this.updateNumberOfEvents}
-                    numberOfEvents={numberOfEvents}
-                  />
-                </Nav.Link>
-                <Nav.Link>
-                  <CitySearch
-                    locations={locations}
-                    updateEvents={this.updateEvents}
-                  />
-                </Nav.Link>
-              </Nav>
-            </Navbar.Collapse>
+            <Container fluid>
+              <Navbar.Brand style={{ fontSize: '2.5rem' }}>Meet</Navbar.Brand>
+              <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+              <Navbar.Collapse id="responsive-navbar-nav" style={{ flex: '1' }}>
+                <Nav justify className="justify-content-center">
+                  <Nav.Link>
+                    <NumberOfEvents
+                      updateEvents={this.updateNumberOfEvents}
+                      numberOfEvents={numberOfEvents}
+                    />
+                  </Nav.Link>
+                  <Nav.Link>
+                    <CitySearch
+                      locations={locations}
+                      updateEvents={this.updateEvents}
+                    />
+                  </Nav.Link>
+                </Nav>
+              </Navbar.Collapse>
+            </Container>
           </Navbar>
-        </Container>
+        </Row>
 
         {!navigator.onLine && (
-          <OfflineAlert
-            text={
-              'You are offline. New events can not be loaded until you have an internet connection'
-            }
-          />
+          <Row>
+            <OfflineAlert
+              text={
+                'You are offline. New events can not be loaded until you have an internet connection'
+              }
+            />
+          </Row>
         )}
-        <EventList events={events} />
+        <Row>
+          <EventList events={events} />
+        </Row>
       </div>
     );
   }
