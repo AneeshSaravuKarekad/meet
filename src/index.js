@@ -13,7 +13,7 @@ if (navigator.onLine) {
 
 ReactDOM.render(
   <React.StrictMode>
-    <Container>
+    <Container fluid>
       <App />
     </Container>
   </React.StrictMode>,

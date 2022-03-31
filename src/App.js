@@ -98,7 +98,7 @@ class App extends Component {
     }
     return (
       <div className="App">
-        <Row>
+        <Row className="justify-content-md-center">
           <Navbar bg="light" expand="lg">
             <Container fluid>
               <Navbar.Brand style={{ fontSize: '2.5rem' }}>Meet</Navbar.Brand>
@@ -124,7 +124,7 @@ class App extends Component {
         </Row>
 
         {!navigator.onLine && (
-          <Row>
+          <Row className="justify-content-md-center">
             <OfflineAlert
               text={
                 'You are offline. New events can not be loaded until you have an internet connection'
@@ -132,7 +132,7 @@ class App extends Component {
             />
           </Row>
         )}
-        <Row>
+        <Row className="justify-content-md-center">
           <EventList events={events} />
         </Row>
       </div>
