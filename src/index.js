@@ -6,8 +6,6 @@ import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 import * as atatus from 'atatus-spa';
 
-atatus.config('8fff3e8232e546eca23d12e9452635d4').install();
-
 ReactDOM.render(
   <React.StrictMode>
     <App />
@@ -19,6 +17,7 @@ ReactDOM.render(
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://cra.link/PWA
 serviceWorkerRegistration.register();
+atatus.config('8fff3e8232e546eca23d12e9452635d4').install();
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
