@@ -100,15 +100,12 @@ class App extends Component {
       <div className="App">
         <Container fluid>
           <Row>
-            <Navbar bg="light" expand="lg">
+            <Navbar bg="light" expand="lg" style={{ width: '100%' }}>
               <Container fluid>
                 <Navbar.Brand style={{ fontSize: '2.5rem' }}>Meet</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                <Navbar.Collapse
-                  id="responsive-navbar-nav"
-                  style={{ flex: '1' }}
-                >
-                  <Nav justify className="justify-content-end flex-grow-1 pe-3">
+                <Navbar.Collapse id="responsive-navbar-nav">
+                  <Nav className="justify-content-end">
                     <Nav.Link>
                       <NumberOfEvents
                         updateEvents={this.updateNumberOfEvents}
