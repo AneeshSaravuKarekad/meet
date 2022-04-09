@@ -1,4 +1,14 @@
 import React, { Component } from 'react';
+import {
+  ScatterChart,
+  Scatter,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+} from 'recharts';
+import { Container, Nav, Navbar, Row, Col } from 'react-bootstrap';
 
 import EventList from './EventList';
 import CitySearch from './CitySearch';
@@ -7,7 +17,7 @@ import { getEvents, extractLocations, checkToken, getAccessToken } from './api';
 import WelcomeScreen from './WelcomeScreen';
 import './App.css';
 import { OfflineAlert } from './Alert';
-import { Container, Nav, Navbar, Row } from 'react-bootstrap';
+import EventGenre from './EventGenre';
 class App extends Component {
   constructor(props) {
     super(props);
@@ -24,7 +34,10 @@ class App extends Component {
     const { numberOfEvents } = this.state;
     this.mounted = true;
 
-    if (navigator.onLine) {
+    if (
+      navigator.onLine &&
+      !window.location.href.startsWith('http://localhost')
+    ) {
       const accessToken = localStorage.getItem('access_token');
       const isTokenValid = (await checkToken(accessToken)).error ? false : true;
       const searchParams = new URLSearchParams(window.location.search);
@@ -83,6 +96,18 @@ class App extends Component {
     );
   };
 
+  getData = () => {
+    const { locations, events } = this.state;
+    const data = locations.map((location) => {
+      const number = events.filter(
+        (event) => event.location === location
+      ).length;
+      const city = location.split(', ').shift();
+      return { city, number };
+    });
+    return data;
+  };
+
   render() {
     const { events, locations, numberOfEvents, showWelcomeScreen } = this.state;
 
@@ -96,10 +121,11 @@ class App extends Component {
         />
       );
     }
+
     return (
       <div className="App">
         <Container fluid>
-          <Row>
+          <Row key={12313}>
             <Navbar bg="light" expand="lg" style={{ width: '100%' }}>
               <Container fluid>
                 <Navbar.Brand style={{ fontSize: '2.5rem' }}>Meet</Navbar.Brand>
@@ -131,7 +157,7 @@ class App extends Component {
           </Row>
 
           {!navigator.onLine && (
-            <Row className="justify-content-center">
+            <Row className="justify-content-center" key={512}>
               <OfflineAlert
                 text={
                   'You are offline. New events can not be loaded until you have an internet connection'
@@ -139,7 +165,32 @@ class App extends Component {
               />
             </Row>
           )}
-          <Row className="justify-content-center">
+
+          <Row
+            className="justify-content-center"
+            style={{ alignItems: 'center' }}
+            key={'123gd'}
+          >
+            <div className="data-vis-wrapper" style={{ width: '100%' }} key={1}>
+              <EventGenre events={events} />
+              <ResponsiveContainer height={400}>
+                <ScatterChart
+                  margin={{ top: 20, right: 20, bottom: 20, left: 20 }}
+                >
+                  <CartesianGrid />
+                  <XAxis type="category" dataKey="city" name="city" />
+                  <YAxis
+                    allowDecimals={false}
+                    type="number"
+                    dataKey="number"
+                    name="number of events"
+                  />
+                  <Tooltip cursor={{ strokeDasharray: '3 3' }} />
+                  <Scatter data={this.getData()} fill="#8884d8" />
+                </ScatterChart>
+              </ResponsiveContainer>
+            </div>
+
             <EventList events={events} />
           </Row>
         </Container>
