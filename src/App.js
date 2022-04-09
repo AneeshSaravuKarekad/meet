@@ -8,7 +8,7 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from 'recharts';
-import { Container, Nav, Navbar, Row, Col } from 'react-bootstrap';
+import { Container, Nav, Navbar, Row } from 'react-bootstrap';
 
 import EventList from './EventList';
 import CitySearch from './CitySearch';

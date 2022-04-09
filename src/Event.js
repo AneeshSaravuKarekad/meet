@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Button } from 'react-bootstrap';
 
 export default class Event extends Component {
   constructor() {
@@ -31,12 +32,12 @@ export default class Event extends Component {
             <p>{event.description}</p>
           </div>
         )}
-        <button
+        <Button
           className="btn btn-show-hide"
           onClick={() => this.handleButtonClicked()}
         >
           {showDetails ? 'Hide Details' : 'Show Details'}
-        </button>
+        </Button>
       </div>
     );
   }
