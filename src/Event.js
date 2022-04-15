@@ -19,7 +19,10 @@ export default class Event extends Component {
     const { event } = this.props;
     const { showDetails } = this.state;
     return (
-      <Card className="event" style={{ width: '24rem' }}>
+      <Card
+        className="event"
+        style={{ width: '24rem', padding: '0', minHeight: '18rem' }}
+      >
         <Card.Header className="summary">
           <Card.Title>{event.summary}</Card.Title>
         </Card.Header>
