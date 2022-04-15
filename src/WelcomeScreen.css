@@ -22,12 +22,11 @@ h4 {
   font-weight: 600;
 }
 
-button {
+.button_cont {
   cursor: pointer;
 }
 
 .google-btn {
-  display: flex;
   width: 184px;
   height: 40px;
   margin: 1rem;
