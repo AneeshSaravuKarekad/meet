@@ -1,16 +1,18 @@
 # Meet App
 
-This app is a collection of upcoming events of cities and times.
+This app is a collection of upcoming events in different cities across the world.
 
-**Google Calendar API** is used to obtain upcoming events. The app is created with **React** with use of **TDD** - test driven development route.
-It is serverless and progressive web application.
+**Google Calendar API** is used to obtain upcoming events.
+The app is created with **React** following **TDD** [Test Driven Development] approach.
+It is a serverless and progressive web application.
 
 ## Features:
 
-- Show/hide event details use app offline
-- Create shortcut of app on the home screen
+- Show/hide event details
+- Use app when offline
 - Filter events by city Specify number of events
-- Displaying a chart of upcoming events by city
+- Display a chart of upcoming events by city
+- Display a chart pie chart showing the percentage of event topics.
 
 ## Build With
 
@@ -23,10 +25,11 @@ It is serverless and progressive web application.
 
 ## User Stories:
 
-- User is able to choose events by city and is able to see the list of these events
-- User can specify number of events to be displayed
-- User can see details of the event and hide them by clicking on show/hide button
-- User can see chart displaying a number of upcoming events.
+- User is able to filter events by city
+- User can filter number of events to be displayed
+- User can see/hide details of the event show/hide button
+- User can see scattered chart displaying a number of upcoming events with respect to location.
+- User can see a pie chart displaying the percentage of individual topics of the events
 
 ## App Link
 
