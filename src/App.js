@@ -167,7 +167,7 @@ class App extends Component {
 
           <Row
             className="justify-content-center"
-            style={{ alignItems: 'center' }}
+            style={{ alignItems: 'center', gap: '3rem' }}
             key={'123gd'}
           >
             <div className="data-vis-wrapper" style={{ width: '100%' }} key={1}>
