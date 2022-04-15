@@ -177,7 +177,16 @@ class App extends Component {
                   margin={{ top: 20, right: 20, bottom: 20, left: 20 }}
                 >
                   <CartesianGrid />
-                  <XAxis type="category" dataKey="city" name="city" />
+                  <XAxis
+                    type="category"
+                    dataKey="city"
+                    name="city"
+                    textAnchor="end"
+                    scaleToFit="true"
+                    verticalAnchor="start"
+                    interval={0}
+                    angle="-40"
+                  />
                   <YAxis
                     allowDecimals={false}
                     type="number"
