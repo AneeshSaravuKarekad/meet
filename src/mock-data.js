@@ -245,6 +245,517 @@ const mockData = [
     },
     eventType: 'default',
   },
+  {
+    kind: 'calendar#event',
+    etag: '"3187238088812000"',
+    id: '7e4k9oop7bb86svd42vui37k6o_20220419T150000Z',
+    status: 'confirmed',
+    htmlLink:
+      'https://www.google.com/calendar/event?eid=N2U0azlvb3A3YmI4NnN2ZDQydnVpMzdrNm9fMjAyMjA0MTlUMTUwMDAwWiBmdWxsc3RhY2t3ZWJkZXZAY2FyZWVyZm91bmRyeS5jb20',
+    created: '2020-07-01T15:56:05.000Z',
+    updated: '2020-07-01T15:57:24.406Z',
+    summary: 'Angular Moscow',
+    description:
+      'Developed by Google, AngularJS is a relatively new JavaScript, and it is designed to make front-end development as easy as possible for you. \n\n\nJoin us to get introduced to this wonderful framework and dive deep into its features.',
+    location: 'Moscow, Russia',
+    creator: {
+      email: 'fullstackwebdev@careerfoundry.com',
+      self: true,
+    },
+    organizer: {
+      email: 'fullstackwebdev@careerfoundry.com',
+      self: true,
+    },
+    start: {
+      dateTime: '2022-04-19T17:00:00+02:00',
+      timeZone: 'Europe/Berlin',
+    },
+    end: {
+      dateTime: '2022-04-19T18:00:00+02:00',
+      timeZone: 'Europe/Berlin',
+    },
+    recurringEventId: '7e4k9oop7bb86svd42vui37k6o',
+    originalStartTime: {
+      dateTime: '2022-04-19T17:00:00+02:00',
+      timeZone: 'Europe/Berlin',
+    },
+    iCalUID: '7e4k9oop7bb86svd42vui37k6o@google.com',
+    sequence: 1,
+    hangoutLink: 'https://meet.google.com/fip-gdth-tdu',
+    conferenceData: {
+      entryPoints: [
+        {
+          entryPointType: 'video',
+          uri: 'https://meet.google.com/fip-gdth-tdu',
+          label: 'meet.google.com/fip-gdth-tdu',
+        },
+        {
+          entryPointType: 'more',
+          uri: 'https://tel.meet/fip-gdth-tdu?pin=1369000914291',
+          pin: '1369000914291',
+        },
+        {
+          regionCode: 'DE',
+          entryPointType: 'phone',
+          uri: 'tel:+49-40-8081616684',
+          label: '+49 40 8081616684',
+          pin: '516915292',
+        },
+      ],
+      conferenceSolution: {
+        key: {
+          type: 'hangoutsMeet',
+        },
+        name: 'Google Meet',
+        iconUri:
+          'https://fonts.gstatic.com/s/i/productlogos/meet_2020q4/v6/web-512dp/logo_meet_2020q4_color_2x_web_512dp.png',
+      },
+      conferenceId: 'fip-gdth-tdu',
+      signature: 'AKpSKUuDLLwSkDi6SaVazlItg4sX',
+    },
+    reminders: {
+      useDefault: true,
+    },
+    eventType: 'default',
+  },
+  {
+    kind: 'calendar#event',
+    etag: '"3187238088812000"',
+    id: '7e4k9oop7bb86svd42vui37k6o_20220426T150000Z',
+    status: 'confirmed',
+    htmlLink:
+      'https://www.google.com/calendar/event?eid=N2U0azlvb3A3YmI4NnN2ZDQydnVpMzdrNm9fMjAyMjA0MjZUMTUwMDAwWiBmdWxsc3RhY2t3ZWJkZXZAY2FyZWVyZm91bmRyeS5jb20',
+    created: '2020-07-01T15:56:05.000Z',
+    updated: '2020-07-01T15:57:24.406Z',
+    summary: 'Angular Moscow',
+    description:
+      'Developed by Google, AngularJS is a relatively new JavaScript, and it is designed to make front-end development as easy as possible for you. \n\n\nJoin us to get introduced to this wonderful framework and dive deep into its features.',
+    location: 'Moscow, Russia',
+    creator: {
+      email: 'fullstackwebdev@careerfoundry.com',
+      self: true,
+    },
+    organizer: {
+      email: 'fullstackwebdev@careerfoundry.com',
+      self: true,
+    },
+    start: {
+      dateTime: '2022-04-26T17:00:00+02:00',
+      timeZone: 'Europe/Berlin',
+    },
+    end: {
+      dateTime: '2022-04-26T18:00:00+02:00',
+      timeZone: 'Europe/Berlin',
+    },
+    recurringEventId: '7e4k9oop7bb86svd42vui37k6o',
+    originalStartTime: {
+      dateTime: '2022-04-26T17:00:00+02:00',
+      timeZone: 'Europe/Berlin',
+    },
+    iCalUID: '7e4k9oop7bb86svd42vui37k6o@google.com',
+    sequence: 1,
+    hangoutLink: 'https://meet.google.com/fip-gdth-tdu',
+    conferenceData: {
+      entryPoints: [
+        {
+          entryPointType: 'video',
+          uri: 'https://meet.google.com/fip-gdth-tdu',
+          label: 'meet.google.com/fip-gdth-tdu',
+        },
+        {
+          entryPointType: 'more',
+          uri: 'https://tel.meet/fip-gdth-tdu?pin=1369000914291',
+          pin: '1369000914291',
+        },
+        {
+          regionCode: 'DE',
+          entryPointType: 'phone',
+          uri: 'tel:+49-40-8081616684',
+          label: '+49 40 8081616684',
+          pin: '516915292',
+        },
+      ],
+      conferenceSolution: {
+        key: {
+          type: 'hangoutsMeet',
+        },
+        name: 'Google Meet',
+        iconUri:
+          'https://fonts.gstatic.com/s/i/productlogos/meet_2020q4/v6/web-512dp/logo_meet_2020q4_color_2x_web_512dp.png',
+      },
+      conferenceId: 'fip-gdth-tdu',
+      signature: 'AKpSKUuDLLwSkDi6SaVazlItg4sX',
+    },
+    reminders: {
+      useDefault: true,
+    },
+    eventType: 'default',
+  },
+  {
+    kind: 'calendar#event',
+    etag: '"3187238088812000"',
+    id: '7e4k9oop7bb86svd42vui37k6o_20220503T150000Z',
+    status: 'confirmed',
+    htmlLink:
+      'https://www.google.com/calendar/event?eid=N2U0azlvb3A3YmI4NnN2ZDQydnVpMzdrNm9fMjAyMjA1MDNUMTUwMDAwWiBmdWxsc3RhY2t3ZWJkZXZAY2FyZWVyZm91bmRyeS5jb20',
+    created: '2020-07-01T15:56:05.000Z',
+    updated: '2020-07-01T15:57:24.406Z',
+    summary: 'Angular Moscow',
+    description:
+      'Developed by Google, AngularJS is a relatively new JavaScript, and it is designed to make front-end development as easy as possible for you. \n\n\nJoin us to get introduced to this wonderful framework and dive deep into its features.',
+    location: 'Moscow, Russia',
+    creator: {
+      email: 'fullstackwebdev@careerfoundry.com',
+      self: true,
+    },
+    organizer: {
+      email: 'fullstackwebdev@careerfoundry.com',
+      self: true,
+    },
+    start: {
+      dateTime: '2022-05-03T17:00:00+02:00',
+      timeZone: 'Europe/Berlin',
+    },
+    end: {
+      dateTime: '2022-05-03T18:00:00+02:00',
+      timeZone: 'Europe/Berlin',
+    },
+    recurringEventId: '7e4k9oop7bb86svd42vui37k6o',
+    originalStartTime: {
+      dateTime: '2022-05-03T17:00:00+02:00',
+      timeZone: 'Europe/Berlin',
+    },
+    iCalUID: '7e4k9oop7bb86svd42vui37k6o@google.com',
+    sequence: 1,
+    hangoutLink: 'https://meet.google.com/fip-gdth-tdu',
+    conferenceData: {
+      entryPoints: [
+        {
+          entryPointType: 'video',
+          uri: 'https://meet.google.com/fip-gdth-tdu',
+          label: 'meet.google.com/fip-gdth-tdu',
+        },
+        {
+          entryPointType: 'more',
+          uri: 'https://tel.meet/fip-gdth-tdu?pin=1369000914291',
+          pin: '1369000914291',
+        },
+        {
+          regionCode: 'DE',
+          entryPointType: 'phone',
+          uri: 'tel:+49-40-8081616684',
+          label: '+49 40 8081616684',
+          pin: '516915292',
+        },
+      ],
+      conferenceSolution: {
+        key: {
+          type: 'hangoutsMeet',
+        },
+        name: 'Google Meet',
+        iconUri:
+          'https://fonts.gstatic.com/s/i/productlogos/meet_2020q4/v6/web-512dp/logo_meet_2020q4_color_2x_web_512dp.png',
+      },
+      conferenceId: 'fip-gdth-tdu',
+      signature: 'AKpSKUuDLLwSkDi6SaVazlItg4sX',
+    },
+    reminders: {
+      useDefault: true,
+    },
+    eventType: 'default',
+  },
+  {
+    kind: 'calendar#event',
+    etag: '"3187238088812000"',
+    id: '7e4k9oop7bb86svd42vui37k6o_20220510T150000Z',
+    status: 'confirmed',
+    htmlLink:
+      'https://www.google.com/calendar/event?eid=N2U0azlvb3A3YmI4NnN2ZDQydnVpMzdrNm9fMjAyMjA1MTBUMTUwMDAwWiBmdWxsc3RhY2t3ZWJkZXZAY2FyZWVyZm91bmRyeS5jb20',
+    created: '2020-07-01T15:56:05.000Z',
+    updated: '2020-07-01T15:57:24.406Z',
+    summary: 'Angular Moscow',
+    description:
+      'Developed by Google, AngularJS is a relatively new JavaScript, and it is designed to make front-end development as easy as possible for you. \n\n\nJoin us to get introduced to this wonderful framework and dive deep into its features.',
+    location: 'Moscow, Russia',
+    creator: {
+      email: 'fullstackwebdev@careerfoundry.com',
+      self: true,
+    },
+    organizer: {
+      email: 'fullstackwebdev@careerfoundry.com',
+      self: true,
+    },
+    start: {
+      dateTime: '2022-05-10T17:00:00+02:00',
+      timeZone: 'Europe/Berlin',
+    },
+    end: {
+      dateTime: '2022-05-10T18:00:00+02:00',
+      timeZone: 'Europe/Berlin',
+    },
+    recurringEventId: '7e4k9oop7bb86svd42vui37k6o',
+    originalStartTime: {
+      dateTime: '2022-05-10T17:00:00+02:00',
+      timeZone: 'Europe/Berlin',
+    },
+    iCalUID: '7e4k9oop7bb86svd42vui37k6o@google.com',
+    sequence: 1,
+    hangoutLink: 'https://meet.google.com/fip-gdth-tdu',
+    conferenceData: {
+      entryPoints: [
+        {
+          entryPointType: 'video',
+          uri: 'https://meet.google.com/fip-gdth-tdu',
+          label: 'meet.google.com/fip-gdth-tdu',
+        },
+        {
+          entryPointType: 'more',
+          uri: 'https://tel.meet/fip-gdth-tdu?pin=1369000914291',
+          pin: '1369000914291',
+        },
+        {
+          regionCode: 'DE',
+          entryPointType: 'phone',
+          uri: 'tel:+49-40-8081616684',
+          label: '+49 40 8081616684',
+          pin: '516915292',
+        },
+      ],
+      conferenceSolution: {
+        key: {
+          type: 'hangoutsMeet',
+        },
+        name: 'Google Meet',
+        iconUri:
+          'https://fonts.gstatic.com/s/i/productlogos/meet_2020q4/v6/web-512dp/logo_meet_2020q4_color_2x_web_512dp.png',
+      },
+      conferenceId: 'fip-gdth-tdu',
+      signature: 'AKpSKUuDLLwSkDi6SaVazlItg4sX',
+    },
+    reminders: {
+      useDefault: true,
+    },
+    eventType: 'default',
+  },
+  {
+    kind: 'calendar#event',
+    etag: '"3187238088812000"',
+    id: '7e4k9oop7bb86svd42vui37k6o_20220517T150000Z',
+    status: 'confirmed',
+    htmlLink:
+      'https://www.google.com/calendar/event?eid=N2U0azlvb3A3YmI4NnN2ZDQydnVpMzdrNm9fMjAyMjA1MTdUMTUwMDAwWiBmdWxsc3RhY2t3ZWJkZXZAY2FyZWVyZm91bmRyeS5jb20',
+    created: '2020-07-01T15:56:05.000Z',
+    updated: '2020-07-01T15:57:24.406Z',
+    summary: 'Angular Moscow',
+    description:
+      'Developed by Google, AngularJS is a relatively new JavaScript, and it is designed to make front-end development as easy as possible for you. \n\n\nJoin us to get introduced to this wonderful framework and dive deep into its features.',
+    location: 'Moscow, Russia',
+    creator: {
+      email: 'fullstackwebdev@careerfoundry.com',
+      self: true,
+    },
+    organizer: {
+      email: 'fullstackwebdev@careerfoundry.com',
+      self: true,
+    },
+    start: {
+      dateTime: '2022-05-17T17:00:00+02:00',
+      timeZone: 'Europe/Berlin',
+    },
+    end: {
+      dateTime: '2022-05-17T18:00:00+02:00',
+      timeZone: 'Europe/Berlin',
+    },
+    recurringEventId: '7e4k9oop7bb86svd42vui37k6o',
+    originalStartTime: {
+      dateTime: '2022-05-17T17:00:00+02:00',
+      timeZone: 'Europe/Berlin',
+    },
+    iCalUID: '7e4k9oop7bb86svd42vui37k6o@google.com',
+    sequence: 1,
+    hangoutLink: 'https://meet.google.com/fip-gdth-tdu',
+    conferenceData: {
+      entryPoints: [
+        {
+          entryPointType: 'video',
+          uri: 'https://meet.google.com/fip-gdth-tdu',
+          label: 'meet.google.com/fip-gdth-tdu',
+        },
+        {
+          entryPointType: 'more',
+          uri: 'https://tel.meet/fip-gdth-tdu?pin=1369000914291',
+          pin: '1369000914291',
+        },
+        {
+          regionCode: 'DE',
+          entryPointType: 'phone',
+          uri: 'tel:+49-40-8081616684',
+          label: '+49 40 8081616684',
+          pin: '516915292',
+        },
+      ],
+      conferenceSolution: {
+        key: {
+          type: 'hangoutsMeet',
+        },
+        name: 'Google Meet',
+        iconUri:
+          'https://fonts.gstatic.com/s/i/productlogos/meet_2020q4/v6/web-512dp/logo_meet_2020q4_color_2x_web_512dp.png',
+      },
+      conferenceId: 'fip-gdth-tdu',
+      signature: 'AKpSKUuDLLwSkDi6SaVazlItg4sX',
+    },
+    reminders: {
+      useDefault: true,
+    },
+    eventType: 'default',
+  },
+  {
+    kind: 'calendar#event',
+    etag: '"3187238088812000"',
+    id: '7e4k9oop7bb86svd42vui37k6o_20220524T150000Z',
+    status: 'confirmed',
+    htmlLink:
+      'https://www.google.com/calendar/event?eid=N2U0azlvb3A3YmI4NnN2ZDQydnVpMzdrNm9fMjAyMjA1MjRUMTUwMDAwWiBmdWxsc3RhY2t3ZWJkZXZAY2FyZWVyZm91bmRyeS5jb20',
+    created: '2020-07-01T15:56:05.000Z',
+    updated: '2020-07-01T15:57:24.406Z',
+    summary: 'Angular Moscow',
+    description:
+      'Developed by Google, AngularJS is a relatively new JavaScript, and it is designed to make front-end development as easy as possible for you. \n\n\nJoin us to get introduced to this wonderful framework and dive deep into its features.',
+    location: 'Moscow, Russia',
+    creator: {
+      email: 'fullstackwebdev@careerfoundry.com',
+      self: true,
+    },
+    organizer: {
+      email: 'fullstackwebdev@careerfoundry.com',
+      self: true,
+    },
+    start: {
+      dateTime: '2022-05-24T17:00:00+02:00',
+      timeZone: 'Europe/Berlin',
+    },
+    end: {
+      dateTime: '2022-05-24T18:00:00+02:00',
+      timeZone: 'Europe/Berlin',
+    },
+    recurringEventId: '7e4k9oop7bb86svd42vui37k6o',
+    originalStartTime: {
+      dateTime: '2022-05-24T17:00:00+02:00',
+      timeZone: 'Europe/Berlin',
+    },
+    iCalUID: '7e4k9oop7bb86svd42vui37k6o@google.com',
+    sequence: 1,
+    hangoutLink: 'https://meet.google.com/fip-gdth-tdu',
+    conferenceData: {
+      entryPoints: [
+        {
+          entryPointType: 'video',
+          uri: 'https://meet.google.com/fip-gdth-tdu',
+          label: 'meet.google.com/fip-gdth-tdu',
+        },
+        {
+          entryPointType: 'more',
+          uri: 'https://tel.meet/fip-gdth-tdu?pin=1369000914291',
+          pin: '1369000914291',
+        },
+        {
+          regionCode: 'DE',
+          entryPointType: 'phone',
+          uri: 'tel:+49-40-8081616684',
+          label: '+49 40 8081616684',
+          pin: '516915292',
+        },
+      ],
+      conferenceSolution: {
+        key: {
+          type: 'hangoutsMeet',
+        },
+        name: 'Google Meet',
+        iconUri:
+          'https://fonts.gstatic.com/s/i/productlogos/meet_2020q4/v6/web-512dp/logo_meet_2020q4_color_2x_web_512dp.png',
+      },
+      conferenceId: 'fip-gdth-tdu',
+      signature: 'AKpSKUuDLLwSkDi6SaVazlItg4sX',
+    },
+    reminders: {
+      useDefault: true,
+    },
+    eventType: 'default',
+  },
+  {
+    kind: 'calendar#event',
+    etag: '"3187238088812000"',
+    id: '7e4k9oop7bb86svd42vui37k6o_20220531T150000Z',
+    status: 'confirmed',
+    htmlLink:
+      'https://www.google.com/calendar/event?eid=N2U0azlvb3A3YmI4NnN2ZDQydnVpMzdrNm9fMjAyMjA1MzFUMTUwMDAwWiBmdWxsc3RhY2t3ZWJkZXZAY2FyZWVyZm91bmRyeS5jb20',
+    created: '2020-07-01T15:56:05.000Z',
+    updated: '2020-07-01T15:57:24.406Z',
+    summary: 'Angular Moscow',
+    description:
+      'Developed by Google, AngularJS is a relatively new JavaScript, and it is designed to make front-end development as easy as possible for you. \n\n\nJoin us to get introduced to this wonderful framework and dive deep into its features.',
+    location: 'Moscow, Russia',
+    creator: {
+      email: 'fullstackwebdev@careerfoundry.com',
+      self: true,
+    },
+    organizer: {
+      email: 'fullstackwebdev@careerfoundry.com',
+      self: true,
+    },
+    start: {
+      dateTime: '2022-05-31T17:00:00+02:00',
+      timeZone: 'Europe/Berlin',
+    },
+    end: {
+      dateTime: '2022-05-31T18:00:00+02:00',
+      timeZone: 'Europe/Berlin',
+    },
+    recurringEventId: '7e4k9oop7bb86svd42vui37k6o',
+    originalStartTime: {
+      dateTime: '2022-05-31T17:00:00+02:00',
+      timeZone: 'Europe/Berlin',
+    },
+    iCalUID: '7e4k9oop7bb86svd42vui37k6o@google.com',
+    sequence: 1,
+    hangoutLink: 'https://meet.google.com/fip-gdth-tdu',
+    conferenceData: {
+      entryPoints: [
+        {
+          entryPointType: 'video',
+          uri: 'https://meet.google.com/fip-gdth-tdu',
+          label: 'meet.google.com/fip-gdth-tdu',
+        },
+        {
+          entryPointType: 'more',
+          uri: 'https://tel.meet/fip-gdth-tdu?pin=1369000914291',
+          pin: '1369000914291',
+        },
+        {
+          regionCode: 'DE',
+          entryPointType: 'phone',
+          uri: 'tel:+49-40-8081616684',
+          label: '+49 40 8081616684',
+          pin: '516915292',
+        },
+      ],
+      conferenceSolution: {
+        key: {
+          type: 'hangoutsMeet',
+        },
+        name: 'Google Meet',
+        iconUri:
+          'https://fonts.gstatic.com/s/i/productlogos/meet_2020q4/v6/web-512dp/logo_meet_2020q4_color_2x_web_512dp.png',
+      },
+      conferenceId: 'fip-gdth-tdu',
+      signature: 'AKpSKUuDLLwSkDi6SaVazlItg4sX',
+    },
+    reminders: {
+      useDefault: true,
+    },
+    eventType: 'default',
+  },
 ];
 
 export { mockData };
